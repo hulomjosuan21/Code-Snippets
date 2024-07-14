@@ -1,5 +1,5 @@
 ### Auto Typed
-
+index.html
 ```html
 <body>
   <div class="container">
@@ -18,7 +18,7 @@
   </script>
 </body>
 ```
-
+style.css
 ```css
 .container {
   width: 100%;
