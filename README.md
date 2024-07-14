@@ -40,5 +40,5 @@ span {
   color: #fff724;
 }
 ```
-#credits to https://github.com/mattboldt/typed.js
+credits to https://github.com/mattboldt/typed.js
 ---
