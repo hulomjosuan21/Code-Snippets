@@ -5,14 +5,14 @@ index.html
 ```html
 <body>
   <div class="container">
-    <h1>I'm a <span class="auto-type"></span></h1>
+    <h1>I'm <span class="auto-type"></span></h1>
   </div>
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
   <script>
     var typed = new Typed(".auto-type", {
-      strings : ["Programmer", "Designer", "Josuan"],
+      strings : ["Sad", "Alone", "Josuan"],
       typeSpeed : 150,
       backSpeed : 150,
       loop : true
