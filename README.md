@@ -1,20 +1,42 @@
-### CDN
+### Auto Typed
 
 ```html
-  <!-- Element to contain animated typing -->
-  <span id="element"></span>
+<body>
+  <div class="container">
+    <h1>I'm a <span class="auto-type"></span></h1>
+  </div>
 
-  <!-- Load library from the CDN -->
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-  <!-- Setup and start animation! -->
   <script>
-    var typed = new Typed('#element', {
-      strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-      typeSpeed: 50,
-    });
+    var typed = new Typed(".auto-type", {
+      strings : ["Programmer", "Designer", "Josuan"],
+      typeSpeed : 150,
+      backSpeed : 150,
+      loop : true
+    })
   </script>
 </body>
+```
+
+```css
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #020412;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-size: 75px;
+}
+
+span {
+  color: #fff724;
+}
 ```
 
 ---
