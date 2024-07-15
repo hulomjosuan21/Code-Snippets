@@ -40,7 +40,7 @@ span {
 }
 ```
 credits to https://github.com/mattboldt/typed.js
----
+___
 
 ## 5 Basic CSS Animation
 index.html
