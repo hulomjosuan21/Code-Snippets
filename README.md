@@ -1,6 +1,5 @@
-## Welcome to my code snippets
+## Auto Typed
 
-### Auto Typed
 index.html
 ```html
 <body>
@@ -43,11 +42,12 @@ span {
 credits to https://github.com/mattboldt/typed.js
 ---
 
-### 5 Basic CSS Animation
-
+## 5 Basic CSS Animation
+index.html
 ```html
 <div class="box"></div>
 ```
+style.css
 ```css
 .box {
   width: 100px;
