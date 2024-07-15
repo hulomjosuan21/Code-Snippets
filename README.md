@@ -114,3 +114,62 @@ Animation Bouncing
   60% {transform: translateY(-15px);}
 }
 ```
+***
+## Simple Switch Light and Dark Theme
+Get dependencies [https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/]
+Include in HTML
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+```
+index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+  <h1>Simple Switch Theme Code</h1>
+  <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+</body>
+</html>
+```
+style.css
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+i {
+  font-size: 50px;
+}
+```
+script.js
+```javascript
+const toggle = document.getElementById('toggleDark');
+const body = document.querySelector('body');
+
+toggle.addEventListener('click', function() {
+  this.classList.toggle('bi-moon'); 
+  if(this.classList.toggle('bi-brightness-high-fill')){
+    body.style.background = 'white';
+    body.style.color = 'black';
+    body.style.transition = '2s';
+  }else{
+    body.style.background = 'black';
+    body.style.color = 'white';
+    body.style.transition = '2s';
+  }
+})
+```
