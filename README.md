@@ -7,7 +7,7 @@ __        __   _
    to my Code Snippets
 ```
 ___
-## Auto Typed
+## <span style="color: blue;">Auto Typed</span>
 
 index.html
 ```html
