@@ -190,6 +190,7 @@ toggle.addEventListener('click', function() {
 
 })
 ```
+<<<<<<< HEAD
 ___
 ## Simple Modal Pop-up
 index.html
@@ -302,3 +303,5 @@ const closePopUp = () => {
 }
 ```
 ___
+=======
+>>>>>>> 01a09797d4a85ff47480b9ba5a10e960396edde2
