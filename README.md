@@ -116,6 +116,7 @@ Animation Bouncing
 ```
 ***
 ## Simple Switch Light and Dark Theme
+Browser LocalStorage implemented
 Get dependencies [https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/]
 Include in HTML
 ```
@@ -160,16 +161,144 @@ script.js
 const toggle = document.getElementById('toggleDark');
 const body = document.querySelector('body');
 
+const currentThem = localStorage.getItem('theme');
+
+if(currentThem === 'dark'){
+  body.style.background = 'black';
+  body.style.color = 'white';
+  toggle.classList.add('bi-moon');
+  toggle.classList.remove('bi-brightness-high-fill');
+}else{
+  body.style.background = 'white';
+  body.style.color = 'black';
+  toggle.classList.add('bi-brightness-high-fill');
+  toggle.classList.remove('bi-moon');
+}
+
 toggle.addEventListener('click', function() {
   this.classList.toggle('bi-moon'); 
   if(this.classList.toggle('bi-brightness-high-fill')){
     body.style.background = 'white';
     body.style.color = 'black';
-    body.style.transition = '2s';
+    localStorage.setItem('theme', 'light');
   }else{
     body.style.background = 'black';
     body.style.color = 'white';
-    body.style.transition = '2s';
+    localStorage.setItem('theme', 'dark');
   }
+  body.style.transition = '2s';
+
 })
 ```
+___
+## Simple Modal Pop-up
+index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+  <div class="container">
+    <button onclick="openPopUp()">Pop-up modal</button>
+  </div>
+  
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="modal-popup" id="modal-popup">
+      <i class="bi bi-x" onclick="closePopUp()"></i>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+```
+style.css
+```css
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+:root {
+  --transition-duration: 0.4s;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-duration);
+  z-index: 1;
+}
+
+.set-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-popup {
+  position: relative;
+  top: 0%;
+  left: 50%;
+  width: 250px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: end;
+
+  transform: translate(-50%, -50%) scale(0);
+  visibility: hidden;
+  transition: transform var(--transition-duration), top var(--transition-duration);
+}
+
+.modal-popup i {
+  font-size: 24px;
+}
+
+.open-popup {
+  transform: translate(-50%, -50%) scale(1);
+  top: 50%;
+  visibility: visible;
+}
+```
+script.js
+```javascript
+let modal_popup = document.getElementById("modal-popup");
+let overlay = document.getElementById("popup-overlay");
+
+const openPopUp = () => {
+  overlay.classList.add('set-overlay');
+  modal_popup.classList.add('open-popup');
+}
+
+const closePopUp = () => {
+  overlay.classList.remove('set-overlay');
+  modal_popup.classList.remove('open-popup');
+}
+```
+___
