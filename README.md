@@ -190,7 +190,6 @@ toggle.addEventListener('click', function() {
 
 })
 ```
-<<<<<<< HEAD
 ___
 ## Simple Modal Pop-up
 index.html
