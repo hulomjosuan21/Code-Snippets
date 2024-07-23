@@ -115,7 +115,7 @@ Animation Bouncing
 }
 ```
 ***
-## Simple Switch Light and Dark Theme
+## Simple Switch Light and Dark Theme v1
 Browser LocalStorage implemented
 Get dependencies [https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/]
 Include in HTML
@@ -302,3 +302,66 @@ const closePopUp = () => {
 }
 ```
 ___
+## Simple Switch Light and Dark Theme v2
+Browser LocalStorage implemented
+Get dependencies [https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/]
+Include in HTML
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+```
+index.html
+```html
+<button class="theme-toggle"><i class="bi bi-brightness-high"></i></button>
+<h2>Switch Color theme</h2>
+```
+style.css
+```css
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+  --clr-black-: black;
+  --clr-white-: white;
+}
+
+body {
+  height: 100vh; font-family: sans-serif; display: grid; place-content: center; grid-gap: 2rem; background-color: var(--clr-white-);
+}
+
+.dark-mode {
+  --clr-black-: white;
+  --clr-white-: black;
+}
+
+.theme-toggle {
+  background-color: transparent; padding: 0.5rem; border-radius: 24px; border: none;
+}
+
+.theme-toggle i {
+  font-size: xx-large; color: var(--clr-black-);
+}
+
+h2 {
+  color: var(--clr-black-);
+}
+```
+main.js
+```javascript
+const themeToggle = document.querySelector('.theme-toggle');
+const icon = document.querySelector('.bi-brightness-high');
+
+const theme = localStorage.getItem('theme');
+
+theme && document.body.classList.add(theme);
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  icon.classList.toggle('bi-moon');
+  if(document.body.classList.contains('dark-mode')){
+    localStorage.setItem('theme', 'dark-mode');
+  }else{
+    localStorage.removeItem('theme');
+  }
+});
+```
