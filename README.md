@@ -367,27 +367,27 @@ themeToggle.addEventListener('click', () => {
 ```
 ___
 ## Media screen query
-# xs
+xs
 ```css
 @media (min-width: 475px) {}
 ```
-# sm
+sm
 ```css
 @media (min-width: 640px) {}
 ```
-# md
+md
 ```css
 @media (min-width: 768px) {}
 ```
-# lg
+lg
 ```css
 @media (min-width: 1024px) {}
 ```
-# xl
+xl
 ```css
 @media (min-width: 1280px) {}
 ```
-# 2xl
+2xl
 ```css
 @media (min-width: 1536px) {}
 ```
