@@ -365,3 +365,30 @@ themeToggle.addEventListener('click', () => {
   }
 });
 ```
+___
+## Media screen query
+# xs
+```css
+@media (min-width: 475px) {}
+```
+# sm
+```css
+@media (min-width: 640px) {}
+```
+# md
+```css
+@media (min-width: 768px) {}
+```
+# lg
+```css
+@media (min-width: 1024px) {}
+```
+# xl
+```css
+@media (min-width: 1280px) {}
+```
+# 2xl
+```css
+@media (min-width: 1536px) {}
+```
+___
